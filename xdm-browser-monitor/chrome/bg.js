@@ -6,7 +6,7 @@
     var vidExts = [];
     var isXDMUp = true;
     var monitoring = true;
-    var debug = true;
+    var debug = false;
     var xdmHost = "http://127.0.0.1:9614";
     var disabled = false;
     var lastIcon;
@@ -17,9 +17,9 @@
     var log = function (msg) {
         if (debug) {
             try {
-                console.log(msg);
+                log(msg);
             } catch (e) {
-                console.log(e + "");
+                log(e + "");
             }
         }
     }
@@ -66,7 +66,7 @@
 
     var sendRecUrl = function (urls, index, data) {
         if (index == urls.length - 1) {
-            console.log(data);
+            log(data);
             var xhr = new XMLHttpRequest();
             xhr.open('POST', xdmHost + "/links", true);
             xhr.send(data);
@@ -148,7 +148,7 @@
     };
 
     var runContentScript = function (info, tab) {
-        console.log("running content script");
+        log("running content script");
         chrome.tabs.executeScript({
             file: 'contentscript.js'
         });
