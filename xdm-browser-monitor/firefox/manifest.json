@@ -1,9 +1,8 @@
 {
-  "update_url": "https://clients2.google.com/service/update2/crx",
   "manifest_version": 2,
   "minimum_chrome_version": "18.0",
   "name": "XDM Browser Monitor",
-  "description": "XDM integration module for Firefox and Chromimum based browsers",
+  "description": "XDM integration module for Firefox Quantum",
   "version": "2.0",
   "icons": {
     "48": "icon.png"
@@ -23,6 +22,11 @@
     "webRequestBlocking",
     "*://*/*"
   ],
+  "applications": {
+    "gecko": {
+      "id": "browser-mon@xdman.sourceforge.net"
+    }
+  },
   "commands": {
     "toggle-monitoring": {
       "suggested_key": {
